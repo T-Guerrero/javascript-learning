@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso javascript - Rocketseat</title>
+    </head>
+    <body>
+        <button id="create">Create Square</button>
+        <div style="margin: 10px" class="squares"></div>
+        <input type="text" name="name" />
+        <button onClick="adicionar()">Adicionar</button>
+        <ul></ul>
+        <script>
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            document.querySelector('#create').addEventListener('click', ()=> {
+                const divSquares = document.querySelector('.squares');
+                let newElement = document.createElement('div');
+                newElement.style.backgroundColor = 'red';
+                newElement.style.width = '100px';
+                newElement.style.height = '100px';
+
+                newElement.addEventListener('mouseover', (e) => {
+                    e.target.style.backgroundColor = getRandomColor();
+                });
+                divSquares.appendChild(newElement);
+            })
+        </script>
+        <script>
+            let nomes = ["Diego", "Gabriel", "Lucas", "Thiago"];
+            const list = document.querySelector('ul');
+            function adicionar(){
+                const list = document.querySelector('ul');
+                const inputElement = document.querySelector('input[name = name]');
+                let newElement = document.createElement('li');
+                newElement.appendChild(document.createTextNode(inputElement.value));
+                list.appendChild(newElement);
+                inputElement.value = '';
+                
+            }
+            nomes.forEach(el => {
+                const list = document.querySelector('ul');
+                let newElement = document.createElement('li');
+                newElement.appendChild(document.createTextNode(el));
+                list.appendChild(newElement);
+            })
+            
+        </script>
+    </body>
+</html>
