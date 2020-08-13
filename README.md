@@ -1,3 +1,3 @@
 # Javascript - Learning
 
-Code that covers the basic of javascript and ES6
+Code that covers the basic of javascript and ES6+
