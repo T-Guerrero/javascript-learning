@@ -1,0 +1,10 @@
+/*
+Esse arquivo de configuração do Babel é usado quando vamos transpilar na mão ES6+ para javascript do browser através
+do comando: "babel ./arquivo.js -o bundle.js"
+
+Não usamos ele quando estamos usando o webpack
+*/ 
+{
+    "presets": ["@babel/preset-env"],
+    "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+}
